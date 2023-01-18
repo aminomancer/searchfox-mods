@@ -1,0 +1,37 @@
+{
+  "name": "searchfox-mods",
+  "version": "1.2.2",
+  "description": "Make Searchfox's context menu open on Right click, and make Alt + Left click and Ctrl + Left click instantly go to definitions or search for tokens. Modifier + Right click will open the normal Firefox/OS context menu.",
+  "main": "searchfoxMods.user.js",
+  "scripts": {
+    "test": "echo \"no test\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminomancer/searchfox-mods.git"
+  },
+  "keywords": [
+    "javascript",
+    "userscript",
+    "greasemonkey-script",
+    "firefox",
+    "searchfox",
+    "userscripts"
+  ],
+  "author": "aminomancer",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/aminomancer/searchfox-mods/issues"
+  },
+  "homepage": "https://github.com/aminomancer/searchfox-mods#readme",
+  "devDependencies": {
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.0.0",
+    "eslint-plugin-fetch-options": "0.0.5",
+    "eslint-plugin-html": "^7.0.0",
+    "eslint-plugin-mozilla": "^3.0.1",
+    "eslint-plugin-no-unsanitized": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "prettier": "^2.5.1"
+  }
+}

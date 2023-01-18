@@ -1,0 +1,36 @@
+module.exports = {
+  root: true,
+  parser: "@babel/eslint-parser",
+  parserOptions: {
+    sourceType: "script",
+    ecmaVersion: "latest",
+    requireConfigFile: false,
+  },
+  env: { browser: true, es2022: true, greasemonkey: true, node: false },
+  ignorePatterns: ["node_modules", "utils/**"],
+  extends: ["plugin:prettier/recommended", "plugin:mozilla/recommended"],
+  plugins: ["mozilla"],
+  globals: { Router: "writable", Settings: "writable" },
+  rules: {
+    "arrow-body-style": "off",
+    complexity: ["warn", { max: 50 }],
+    curly: ["error", "multi-line", "consistent"],
+    "linebreak-style": ["error", "unix"],
+    "no-console": ["warn", { allow: ["error"] }],
+    "no-implied-eval": "error",
+    "prefer-arrow-callback": "off",
+    "prefer-numeric-literals": "error",
+    "prefer-promise-reject-errors": "error",
+    "prefer-reflect": "off",
+    "prefer-rest-params": "error",
+    "prefer-spread": "error",
+    "prefer-template": "error",
+    "prettier/prettier": ["error", {}, { usePrettierrc: true }],
+  },
+  overrides: [
+    {
+      files: [".eslintrc.js"],
+      env: { node: true, browser: false, greasemonkey: false },
+    },
+  ],
+};
