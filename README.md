@@ -1,6 +1,6 @@
 # [searchfox-mods][]
 
-Make [Searchfox's][searchfox] context menu open on Right click, and make Alt + Left click and Ctrl + Left click instantly go to definitions or search for tokens. Modifier + Right click will open the normal Firefox/OS context menu.
+Make [Searchfox's][searchfox] context menu open on Right click, and make Alt + Left click and Ctrl + Left click instantly go to definitions or search for tokens. Modifier + Right click will open the normal Firefox/OS context menu. Middle click will open definition in a new background tab, and Shift + Middle click will do the same in a new foreground tab.
 
 ## Installation
 

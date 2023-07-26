@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name           Searchfox Mods
-// @version        1.2.2
+// @version        1.2.3
 // @author         aminomancer
 // @homepageURL    https://github.com/aminomancer/searchfox-mods
 // @supportURL     https://github.com/aminomancer/searchfox-mods
 // @downloadURL    https://cdn.jsdelivr.net/gh/aminomancer/searchfox-mods@latest/searchfoxMods.user.js
 // @namespace      https://github.com/aminomancer
 // @match          *://searchfox.org/*
-// @description    Make Searchfox's context menu open on Right click, and make Alt + Left click and Ctrl + Left click instantly go to definitions or search for tokens. Modifier + Right click will open the normal Firefox/OS context menu.
+// @description    Make Searchfox's context menu open on Right click, and make Alt + Left click and Ctrl + Left click instantly go to definitions or search for tokens. Modifier + Right click will open the normal Firefox/OS context menu. Middle click will open definition in a new background tab, and Shift + Middle click will do the same in a new foreground tab.
 // @grant          none
 // @run-at         document-idle
 // @license        This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, you can obtain one at http://mozilla.org/MPL/2.0/.
@@ -228,20 +228,18 @@ window.addEventListener("mousedown", event => {
     return;
   }
   // Send a mousedown event without highlighting any text on shift click
-  if (event.shiftKey) {
-    let newEvent = new MouseEvent("mousedown", {
-      button: event.button,
-      which: event.which,
-      altKey: event.altKey,
-      shiftKey: false,
-      ctrlKey: event.ctrlKey,
-      metaKey: event.metaKey,
-    });
-    event.target.dispatchEvent(newEvent);
-    event.preventDefault();
-    event.stopPropagation();
-    setCaret(event);
-  }
+  let newEvent = new MouseEvent("mousedown", {
+    button: event.button,
+    which: event.which,
+    altKey: event.altKey,
+    shiftKey: false,
+    ctrlKey: event.ctrlKey,
+    metaKey: event.metaKey,
+  });
+  event.target.dispatchEvent(newEvent);
+  event.preventDefault();
+  event.stopPropagation();
+  setCaret(event);
 });
 
 window.addEventListener("auxclick", event => {
