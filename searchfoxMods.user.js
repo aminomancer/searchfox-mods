@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Searchfox Mods
-// @version        1.2.3
+// @version        1.2.4
 // @author         aminomancer
 // @homepageURL    https://github.com/aminomancer/searchfox-mods
 // @supportURL     https://github.com/aminomancer/searchfox-mods
@@ -182,7 +182,7 @@ function getOptions(node) {
     break;
   }
   if (symbolToken) {
-    let symbols = symbolToken.getAttribute("data-symbols");
+    let symbols = symbolToken.getAttribute("data-symbols")?.split(",");
     let visibleToken = symbolToken.textContent;
     options.stickyHighlight = () => {
       waiveXray(window).Hover.stickyHighlight(symbols, visibleToken);
